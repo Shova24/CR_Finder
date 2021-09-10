@@ -1,0 +1,11 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<h2>Update Teacher Informations</h2>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success">Update</button>
+</form>
+
+{% endblock content %}

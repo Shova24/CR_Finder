@@ -1,0 +1,17 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<h2>Delete Teacher</h2>
+<hr>
+<h3>Delete <strong style="color: red;">{{object.T_name}}</strong>'s information from the database.</h3>
+<br>
+
+<div class="form-group">
+<form action="" method="POST">
+    {% csrf_token %}
+    <strong>Are you sure?</strong>
+    <button class="btn btn-danger">Delete</button>
+</form>
+</div>
+<br>
+
+{% endblock content %}

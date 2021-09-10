@@ -1,0 +1,81 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+	<div >
+    <center>
+    <h2>Our CR's</h2>
+	<hr>
+   
+    </center>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand"></a>
+                <form action="{% url 'search_cr' %}" method="POST" class="form-inline">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="searched" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+        </nav>
+
+		<div class="card card-body">
+			<table class="table table-hover">
+            <center>
+				<tr>
+					<th>Section</th>
+					<th>Photo</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+					
+                    <th>Facebook Profile</th>
+                    <th></th>
+                    <th></th>
+				</tr>
+            </center> 
+      
+                {% if searched %}
+                  {% for i in cr %}
+                	<tr>
+					    <td>{{i.section}}</td>
+					    <td>
+
+                            <img src= "{{i.photo.url}}" alt="" class="card-img-top" height="50px" width ="30px">
+                      
+                        </td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.phone}}</td>
+                     
+                        <td><a class="nav-link active" href='{{i.profile}}'><button type="button" class="btn btn-warning">View Facebook Profile</button></a></td>
+                        <td><a class="nav-link active" href="{% url 'edit_cr' i.pk %}"><button type="button" class="btn btn-success">Edit</button></a></td>
+                        <td><a class="nav-link active" href="{% url 'del_cr' i.pk %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+				    </tr>
+                    
+                    {% endfor %}    
+                {% else %}
+
+        {% for i in object_list %}
+                	<tr>
+					    <td>{{i.section}}</td>
+					     <td>
+                          
+                            <img src= "{{i.photo.url}}" alt="" class="card-img-top" height="50px" width ="30px">
+                      
+                        </td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.phone}}</td>
+                        
+                        <td><a class="nav-link active" href='{{i.profile}}'><button type="button" class="btn btn-warning">View Facebook Profile</button></a></td>
+                        <td><a class="nav-link active" href="{% url 'edit_cr' i.pk %}"><button type="button" class="btn btn-success">Edit</button></a></td>
+                        <td><a class="nav-link active" href="{% url 'del_cr' i.pk %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+				    </tr>
+                    
+                    {% endfor %}              
+                
+                {% endif %}
+              
+
+			</table>
+		</div>
+	</div>
+
+
+
+
+{% endblock content %}

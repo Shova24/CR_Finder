@@ -1,0 +1,127 @@
+
+.bg{
+    background-color: rgb(239, 245, 245);
+}
+
+.head_h1{
+    background-color: rgb(245, 104, 39);
+    color: white;
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+    padding: 20px ;
+    padding-bottom: 30px;
+    margin: 0%;
+}
+.cl{
+    background-color: lightpink;
+}
+.cl2{
+    background-color: rgb(20, 17, 17);
+}
+.cl3{
+    background-color: rgb(84, 206, 47);
+}
+.cl4{
+    background-color: rgb(118, 28, 235);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+.bod{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: rgb(159, 240, 240);
+    font-family: 'Poppins', sans-serif;
+}
+.cont{
+    width:1200x;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 25px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+.cont .box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 40px 40px 10px;
+    padding-left: 250px;
+    transition: 0.5s;
+    text-align: left;
+    background: #fff;
+}
+.cont .box:hover
+{
+    margin: 15px;
+    background:#31e2fa;
+    background-image: linear-gradient(to right, #5f7bf5 ,#a894f0);
+}
+.cont .box p{
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.cont .box h2{
+    margin: 20px 0 0;
+    padding: 0;
+    transition: 0.5s;
+    font-size: 18px;
+    color: rgb(10, 87, 110);
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.cont .box h2 span{
+    font-weight: 600;
+    font-size: 14px;
+    color: darkblue;
+    transition: 0.5s;
+
+}
+.cont .box:hover p,
+.cont .box:hover h4,
+.cont .box:hover h4 span{
+    color: #fff;
+
+}
+
+.cont .box .imgBox{
+    position: absolute;
+    top: -30px;
+    left: 17%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.ins{
+    padding: 10px;
+    background-color: teal;
+    color: white;
+}
+
+
+
+.mid{
+    
+    padding: 20px;
+    box-shadow: 5px 10px 18px #888888;
+    background-color: rgb(226, 246, 252);
+}
+.send{
+    text-align: right;
+
+}

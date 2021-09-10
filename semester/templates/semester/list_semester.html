@@ -1,0 +1,57 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+
+<div class="container p-5">
+<div class="row">
+<div class="col-sm-3 ">
+<center>
+<h2>Add semester</h2>
+</center>
+
+<div class="form-group">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success">Post</button>
+</form>
+</div>
+
+</div>
+
+<div class="col-sm-8 p-4 ml-4">
+
+		<div class="card card-body">
+			<table class="table table-hover">
+            <center>
+				<tr>
+					<th>Semester Name</th>
+					<th>Year</th>
+                    <th></th>
+                    <th></th>
+				</tr>
+            </center> 
+
+            <tbody>
+         
+                    {% for i in object_list %}
+                	<tr>
+			 	
+					    <td>{{i.name}}</td>
+					    <td>{{i.year}}</td>
+                        <td><a class="nav-link active" href="{% url 'edit_sem' i.pk %}"><button type="button" class="btn btn-success">Edit</button></a></td>
+                        <td><a class="nav-link active" href="{% url 'del_sem' i.pk %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+				    
+                    </tr>
+                    {% endfor %}              
+             </tbody>
+			</table>
+		</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+{% endblock content %}

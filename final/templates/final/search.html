@@ -1,0 +1,63 @@
+{% extends 'dashboard/homepage.html' %}
+
+{% block body %}
+
+ {% if searched %}
+    {{searched}}
+    {% else %}
+    {{searched}}
+    {% endif %}
+
+  <table class="table table-hover">
+  <tr>
+  <th>semester</th>
+  <th>course</th>
+  <th>section</th>
+  <th>teacher</th>
+
+  </tr>
+  
+{% if searched %}
+{% for i in cor %}
+<tr>
+<td>{{i.semester}}</td>
+<td>{{i.course}}</td>
+<td>{{i.section}}</td>
+<td>{{i.teacher}}</td>
+                     
+  <td><a class="nav-link active" href="{% url 'search_cr'%}">
+  <button type="button" class="btn btn-success">Search</button></a>
+  </td>
+
+  
+  </tr>
+</tr>
+                    
+{% endfor %}    
+{% else %}
+
+  {% for i in object_list %}
+  {% csrf_token %}
+  <tr>
+  <td>{{i.semester}}</td>
+  <td>{{i.course}}</td>
+  <td>{{i.section}}</td>
+  <td>{{i.teacher}}</td>
+
+  
+
+  </tr>
+  {% endfor %}
+  {% endif %}
+<br>
+
+
+  </table>
+  </div>
+
+ 
+
+
+{% endblock body %}
+
+

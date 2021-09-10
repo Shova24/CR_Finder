@@ -1,0 +1,252 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/base.css' %}" />
+
+
+    <!-- Favicons -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/css/bootstrap.min.css' %} "
+    />
+
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/plugins/fontawesome/css/fontawesome.min.css'%}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/plugins/fontawesome/css/all.min.css' %} "
+    />
+
+    <!-- Main CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/css/style1.css' %}"
+    />
+
+    <title>Admin_side_course_pocket</title>
+  </head>
+
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Home Banner -->
+			<section class="section section-search">
+				<div class="container-fluid">
+					<div class="banner-wrapper">
+						<div class="banner-header text-center">
+							<h2>CR Finder...</h2>
+							
+						</div>
+                         
+						<!-- Search -->
+						<div class="search-box">
+							<form action={% url 'search_final' %} method="POST" class="form-inline">
+								{% csrf_token %}
+								<div class="form-group search-location">
+								<p></p>
+									<p>Search by course name:</p>
+								</div>
+								<div class="form-group search-info">
+									<input type="search" class="form-control" placeholder="Search by Course name.." name="searched" aria-label="Search">
+								</div>
+								<button type="submit" class="btn btn-success search-btn"><i class="fas fa-search"></i> <span>Search</span></button>
+				
+				
+							
+							</form>
+						</div>
+						<!-- /Search -->
+						
+					</div>
+				</div>
+			</section>
+			<!-- /Home Banner -->
+<hr>
+<div class="container p-5">
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+   
+
+
+	{% block body %}
+			
+			
+	{% endblock body %}
+	  </div> 
+	  </div>
+</div>
+<!--
+<div class="jumbotron">
+  <h2 class="display-4">Developed by...</h2>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  
+  
+		
+		<div class="container">
+		<div class="row">
+
+		<div clss="col-sm-4 p-4">
+			<div class="card" style="width: 18rem;">
+  			<img src="{% static 'dashboard/assets/img/bro.png' %}" class="card-img-top"  alt="Feature">
+  			<div class="card-body">
+    		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+		</div>
+
+		<div clss="col-sm-4 p-4">
+			<div class="card" style="width: 18rem;">
+  			<img src="{% static 'dashboard/assets/img/bro.png' %}" class="card-img-top"  alt="Feature">
+  			<div class="card-body">
+    		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+		</div>
+			<div clss="col-sm-4 p-4">
+			<div class="card" style="width: 18rem;">
+           
+			<img src="{% static 'dashboard/assets/img/bro.png' %}" class="card-img-top"  alt="Feature">
+  			
+  			<div class="card-body">
+    		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  			</div>
+			</div>
+		</div>
+		</div>
+		</div>
+
+        </div>
+-->
+	
+		 <-- Availabe Features -->
+		   <section class="section section-features">
+				<div class="container-fluid">
+				   <div class="row">
+						<div class="col-md-5 features-img">
+							<img src="{% static 'dashboard/assets/img/diu.png' %}" class="card-img-top"  alt="Feature">
+						</div>
+						<div class="col-md-7">
+							<div class="section-header">	
+								<h2 class="mt-2">Feed back</h2>
+								<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+							</div>	
+							
+                            <div class="container">
+
+
+<a class="btn btn-sm btn-info" href="{% url 'add_msg' %}">Send feedback</a>
+ 
+
+</div>
+                         
+						</div>
+				   </div>
+				</div>
+			</section>		
+			<!-- Availabe Features -->
+			
+
+
+
+
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+				<!-- Footer Bottom -->
+                <div class="footer-bottom">
+					<div class="container-fluid">
+					
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="templateshub.net">course pocket</a></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+								
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											<li><a href=#>Terms and Conditions</a></li>
+											<li><a href=#>Policy</a></li>
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+						
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+	   </div>
+	   <!-- /Main Wrapper -->
+	 
+    <!-- jQuery -->
+    <script src="dashboard/assets/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="dashboard/assets/js/popper.min.js"></script>
+    <script src="dashboard/assets/js/bootstrap.min.js"></script>
+
+    <!-- Sticky Sidebar JS -->
+    <script src="dashboard/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+    <script src="dashboard/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+
+    <!-- Custom JS -->
+    <script src="dashboard/assets/js/script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

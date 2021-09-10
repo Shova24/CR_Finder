@@ -1,0 +1,160 @@
+{% load static %}
+                <nav class="dashboard-menu">
+                  <ul>
+                  {% if user.is_authenticated %}
+			
+                    <li>
+                      <a href="{% url 'dashboard' %}">
+                        <i class="fas fa-columns"></i>
+                        <span>Dashboard</span>
+                      </a>
+                    </li>
+
+                    <li class="dropdown show">
+
+                        <a class="dropdown-toggle" href="{% url 'view_teacher' %}" role="button" 
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false"><i class="fas fa-columns"></i>
+                        <span>Teacher</span></a>
+                        
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      
+                      <a class="dropdown-item" href="{% url 'add_teacher' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Add Teacher</span></a>
+                      <hr>
+                       <a class="dropdown-item" href="{% url 'view_teacher' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Teacher List</span></a>
+                        <hr>
+                      </div>
+                     
+                    </li>
+
+                    
+                    <li class="dropdown show">
+
+                        <a class="dropdown-toggle" href="{% url 'view_course' %}" role="button" 
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false"><i class="fas fa-columns"></i>
+                        <span>Courses</span></a>
+                        
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      
+                      <a class="dropdown-item" href="{% url 'add_course' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Add Course</span></a>
+                      <hr>
+                       <a class="dropdown-item" href="{% url 'view_course' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Course List</span></a>
+                        <hr>
+                      </div>
+                     
+                    </li>
+
+
+                    <li>
+                      <a href="{% url 'add_sem' %}">
+                        <i class="fas fa-user-injured"></i>
+                        <span>View Semester</span>
+                      </a>
+                    </li>
+                    <li>
+                    
+                      <a href="{% url 'add_batch' %}">
+                        <i class="fas fa-user-injured"></i>
+                        <span>Add Batch</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{% url 'add_sec' %}">
+                        <i class="fas fa-user-injured"></i>
+                        <span>ADD Section</span>
+                      </a>
+                    </li>
+                     <li>
+                      <a href="{% url 'add' %}">
+                        <i class="fas fa-user-injured"></i>
+                        <span>Course Taken By</span>
+                      </a>
+                    </li>
+                    
+                    <li class="dropdown show">
+
+                        <a class="dropdown-toggle" href= {% url 'add' %} role="button" 
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false"><i class="fas fa-columns"></i>
+                        <span>Course Taken</span></a>
+                        
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      
+                      <a class="dropdown-item" href="{% url 'add' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Add Course Taken</span></a>
+                      <hr>
+                       <a class="dropdown-item" href="{% url 'view' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Course Taken List</span></a>
+                        <hr>
+                      </div>
+                     
+                    </li>
+                    
+                    <li class="dropdown show">
+
+                        <a class="dropdown-toggle" href= {% url 'add_cr' %} role="button" 
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+                        aria-expanded="false"><i class="fas fa-columns"></i>
+                        <span>CR's</span></a>
+                        
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      
+                      <a class="dropdown-item" href="{% url 'add_cr' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>Add CR</span></a>
+                      <hr>
+                       <a class="dropdown-item" href="{% url 'view_cr' %}">
+                      <i class="fas fa-user-injured"></i>
+                        <span>CR List</span></a>
+                        <hr>
+                      </div>
+                     
+                    </li>
+
+
+                    <li>
+                      <a href="{% url 'mess' %}">
+                        <i class="fas fa-comments"></i>
+                        <span>Message</span>
+                       
+                      </a>
+                    </li>
+                       <li>
+                       <a href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                       
+                      </a>
+                    </li>
+
+                    		  {% else %}
+
+                    <li>
+                      <a href="{% url 'register' %}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Register</span>
+                        
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{% url 'login' %}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Login</span>
+                       
+                      </a>
+                    </li>
+                  
+
+</nav>
+ {% endif %}

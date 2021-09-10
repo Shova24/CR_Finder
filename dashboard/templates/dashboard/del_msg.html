@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content%}
+<h1>Delete messege</h1>
+<h2>{{messeges.name}}</h2>
+<h3>Delete : {{messeges.name}}</h3>
+<br>
+
+<div class="form-group">
+<form action="" method="POST">
+    {% csrf_token %}
+    <strong>Are you sure?</strong>
+    <button class="btn btn-danger">Delete</button>
+</form>
+</div>
+<br>
+
+{%endblock content%}
